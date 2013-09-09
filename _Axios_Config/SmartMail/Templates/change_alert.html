@@ -1,0 +1,81 @@
+<html>
+<head>
+<title>assyst Smart Mail template</title>
+<!-- Copyright(c) Axios Systems -->
+<!-- All Rights Reserved -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- Stylesheet definition -->
+	<%= SMEXT_get_html("stylesheet.html") %>
+</head>
+
+<body>
+<table border="0" align="center" cellpadding="0" cellspacing="0">
+	<tr>
+		<td valign="bottom">
+		<span style='color:red'>
+					<% if #COMP_LOGO > 1 then %>  
+			<img src="<%= COMP_LOGO%>" align="center">
+			<% end %><b>
+		<font size="2"><BR>Change #$EVENT_TYPE_U$EVENT_REF </font>
+		has been logged with risk level:  $RISK_VALUE!</font></b></span></td>
+	</tr>
+	<tr>
+		<td valign="top"><br>
+		
+<!-- Event Summary -->
+		<%= SMEXT_get_html("event_summary.html") %>
+		
+		</td>
+	</tr>
+	<tr>
+		<td>
+<!-- Event Description -------->
+		<%= SMEXT_get_html("event_desc.html") %>
+		
+		</td>
+	</tr>
+	<tr>
+		<td>
+<!-- RFC Justification and Additional Requirements -------->
+		<%= SMEXT_get_html("rfc_justification.html") %> 
+		
+		</td>
+	</tr>
+	<tr>
+		<td valign="top"><br>
+
+<!-- USER 1 Chars -------->
+		<%= SMEXT_get_html("user_char_1.html") %>
+	
+		</td>
+	</tr>
+	<tr>
+		<td valign="top"><br>
+
+<!-- USER 2 Chars -------->
+		<%= SMEXT_get_html("user_char_2.html") %> 
+	
+		</td>
+	</tr>
+	<tr>
+
+	<!-- Actions List (only need a leading <tr> tag, no trailing <tr> or <td> tags-------->
+		<%= SMEXT_get_html("actions_list.html") %>
+
+	<tr>
+		<td>
+
+<!-- Linked Events ------->	
+		<%= SMEXT_get_html("linked_events.html") %> 
+
+		</td>
+    </tr>
+	<tr>	
+		<td class="maintext">
+		<p><br>Many thanks,
+			<br><%= strServiceDeskName %><br>
+		</td>
+	</tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,137 @@
+		<table width="100%" class="tableframe">
+			<tr><td valign="top"><table width="100%" border="0" cellpadding="0" cellspacing="0">
+			<tr>
+				<td width="20%" class="wtcolumn">
+				<p>Event Reference</td>
+				<td width="40%" class="purplecolumn">
+				$EVENT_TYPE_U$EVENT_REF
+				</td>
+				<td width="40%" class="wtcolumnblk">&nbsp;</td>
+			</tr>
+			<tr>
+				<td class="wtcolumn">
+				<p>Logged by</td>
+				<td class="purplecolumn"><%= LOG_USR_N or "&nbsp;" %></td>
+				<td class="wtcolumnblk"><%= LOG_USR_SC or "&nbsp;" %></td>
+			</tr>
+			<tr>
+				<td class="wtcolumn">
+				<p>Date Logged</td>
+				<td class="purplecolumn"><%= SMEXT_FormatNameFromDate(LOGGED_DATE) %> <%= LOGGED_TIME %></td>
+				<td class="wtcolumnblk">&nbsp;</td>
+			</tr>
+			<% if (REP_USR_N or "") ~= "" then %>
+				<tr>
+					<td class="wtcolumn">
+					<p>Reported by</td>
+					<td class="purplecolumn"><%= REP_USR_N or "&nbsp;" %></td>
+					<td class="wtcolumnblk"><%= REP_USR_SC or "&nbsp;" %></td>
+				</tr>
+				<tr>
+					<td class="wtcolumn">
+					<p>Telephone</td>
+					<td class="purplecolumn"><%= REP_USR_TEL or "&nbsp;" %></td>
+					<td class="wtcolumnblk">&nbsp;</td>
+				</tr>
+				<% if (REP_USR_EXT or "") ~= "" then %>
+				<tr>
+					<td class="wtcolumn">
+					<p>Extension</td>
+					<td class="purplecolumn"><%= REP_USR_EXT or "&nbsp;" %></td>
+					<td class="wtcolumnblk">&nbsp;</td>
+				</tr>
+				<% end %>
+			<% end %>
+			<tr>
+				<td class="wtcolumn">
+				<p>Affected User</td>
+				<td class="purplecolumn"><%= AFF_USR_N or "&nbsp;" %></td>
+				<td class="wtcolumnblk"><%= AFF_USR_SC or "&nbsp;" %></td>
+			</tr>
+			<tr>
+				<td class="wtcolumn">
+				<p>Telephone</td>
+				<td class="purplecolumn"><%= AFF_USR_TEL or "&nbsp;" %></td>
+				<td class="wtcolumnblk">&nbsp;</td>
+			</tr>
+			<% if (AFF_USR_EXT or "") ~= "" then %>
+			<tr>
+				<td class="wtcolumn">
+				<p>Extension</td>
+				<td class="purplecolumn"><%= AFF_USR_EXT or "&nbsp;" %></td>
+				<td class="wtcolumnblk">&nbsp;</td>
+			</tr>
+			<% end %>
+			<tr>
+				<td class="wtcolumn">
+				<p>Item</td>
+				<td class="purplecolumn"><%= ITEM_N or "&nbsp;" %></td>
+				<td class="wtcolumnblk"><%= ITEM_SC or "&nbsp;" %></td>
+			</tr>
+			<tr>
+				<td class="wtcolumn">
+				<p>Product</td>
+				<td class="purplecolumn"><%= ITEM_PROD_N or "&nbsp;" %></td>
+				<td class="wtcolumnblk"><%= ITEM_PROD_SC or "&nbsp;" %></td>
+			</tr>
+			<tr>
+				<td class="wtcolumn">
+				<p>Section Dept</td>
+				<td class="purplecolumn">
+				<p><%= AFF_USR_SECTN_N or "&nbsp;" %> - <%= AFF_USR_DEPT_N or "&nbsp;" %></td>
+				<td class="wtcolumnblk">
+				<p><%= AFF_USR_SECTN_SC or "&nbsp;" %>-<%= AFF_USR_DEPT_SC or "&nbsp;" %></td>
+			</tr>
+			<tr>
+				<td class="wtcolumn">
+				<p>Location</td>
+				<td class="purplecolumn">
+				<p><%= AFF_USR_BLDNG_N or "&nbsp;" %> - <%= AFF_USR_ROOM_N or "&nbsp;" %></td>
+				<td class="wtcolumnblk">
+				<p><%= AFF_USR_BLDNG_SC or "&nbsp;" %>-<%= AFF_USR_ROOM_SC or "&nbsp;" %></td>
+			</tr>
+			<tr>
+				<td class="wtcolumn">
+				<p>Category</td>
+				<td class="purplecolumn"><%= CATEGORY_N or "&nbsp;" %></td>
+				<td class="wtcolumnblk"><%= CATEGORY_SC or "&nbsp;" %></td>
+			</tr>
+			<tr>
+				<td class="wtcolumn">
+				<p>Priority</td>
+				<td class="purplecolumn"><%= PRIORITY_N or "&nbsp;" %></td>
+				<td class="wtcolumnblk"><%= PRIORITY_SC or "&nbsp;" %></td>
+			</tr>
+			<% if RFC_REQUIRED_BY_DATE or RFC_SCHEDULED_TIME or RFC_END_TIME then %>
+				<tr>
+					<td class="wtcolumn">
+					<p>Required by</td>
+					<td class="purplecolumn">
+					<p><%= RFC_REQUIRED_BY_DATE  or "&nbsp;" %>&nbsp;<%= RFC_REQUIRED_BY_TIME  or "&nbsp;" %></td>
+					<td class="wtcolumnblk">&nbsp;</td>
+				</tr>
+				<tr>
+					<td class="wtcolumn">
+					<p>Scheduled</td>
+					<td class="purplecolumn">
+					<p><%= RFC_SCHEDULED_DATE  or "&nbsp;" %>&nbsp;<%= RFC_SCHEDULED_TIME  or "&nbsp;" %></td>
+					<td class="wtcolumnblk">&nbsp;</td>
+				</tr>
+				<tr>
+					<td class="wtcolumn">
+					<p>End</td>
+					<td class="purplecolumn">
+					<p><%= RFC_END_DATE  or "&nbsp;" %>&nbsp;<%= RFC_END_TIME  or "&nbsp;" %></td>
+					<td class="wtcolumnblk">&nbsp;</td>
+				</tr>
+			<% end %>
+			<% if AUTH_USR_SC then %>
+				<tr>
+					<td class="wtcolumn">
+					<p>Authorised by</td>
+					<td class="purplecolumn"><%= AUTH_USR_N or "&nbsp;" %></td>
+					<td class="wtcolumnblk"><%= AUTH_USR_SC or "&nbsp;" %></td>
+				</tr>
+			<% end %>
+			</table></td></tr>
+		</table>

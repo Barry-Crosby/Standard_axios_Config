@@ -1,0 +1,11 @@
+<% if (PARENT_EVENT_DESC or "") ~= "" then %>
+		<table width="100%" class="tableframe">
+			<tr>
+				<td class="deschighlight">
+				<p>Request Description</td>
+			</tr>
+			<tr>
+				<td class="desctext"><%= html_break(PARENT_EVENT_DESC) %></td>
+			</tr>
+		</table> 
+<% end %>

@@ -1,0 +1,22 @@
+max_errors 10
+separator ','
+delimiter '"'
+batch 100
+update sectn_dept_sc
+table sectn_dept
+columns sectn_dept_id keyval
+sectn_dept_sc varchar
+sectn_sc varchar
+sectn_id lookup sectn_id from sectn where sectn_sc
+sectn_n lookup_varchar sectn_n from sectn where sectn_sc
+stat_flag char
+manager_id int '0'
+dept_id int '0'
+csg_id int '0'
+modify_id varchar 'CORP DIR'
+modify_date date currentdate
+inc_clrnce_days int '0'
+disposals char 'n'
+licence_count int '0'
+version int '1'
+data

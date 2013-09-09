@@ -1,0 +1,85 @@
+<html>
+
+<head>
+<title>assyst Smart Mail template</title>
+<!-- Copyright(c) Axios Systems -->
+<!-- All Rights Reserved -->
+<!-- For V9 templates user TICKET_TYPE_FOR_EMAIL for event type name and EVENT_TYPE_EXT for event types -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- Stylesheet definition -->
+	<%= SMEXT_get_html("stylesheet.html") %>
+
+</head>
+
+<body>
+<table border="0" align="center" cellpadding="0" cellspacing="0" width=600>
+	<tr>
+		<td valign="bottom">
+		<p align="center"><b><font size="2"><BR>$TICKET_TYPE_FOR_EMAIL #$EVENT_TYPE_U$EVENT_REF </font>
+		Status Update Request</font></b></td>
+	</tr>
+	<tr>
+		<td valign="top" class="maintext"><br>
+			<p>Status request comments:
+			<br>
+			<%= html_break(ACT_DESC) %>
+			
+			<br><br>
+			View this event via browser at <A HREF="<%=strassystWebURL%>/event/DisplayEvent.do?dispatch=getEvent&eventId=$EVENT_ID&resultset=EventSearchEventList&ncAction=RESETHISTORY&ncForwardName=EventSearch&history=HISTORYCLEAR">assyst Web</A><br>
+			or via Blackberry at <A HREF="<%=strassystMobileURL%>/event/DisplayEvent.do?dispatch=getEvent&eventId=$EVENT_ID&resultset=EventSearchEventList&ncAction=RESETHISTORY&ncForwardName=EventSearch&history=HISTORYCLEAR">assyst Mobile</A>.<br>
+			</p>
+		<%= SMEXT_get_html("action_link.html") %>
+		</td>
+	</tr>
+	<tr>
+	<td valign="top"><br>
+	<!-- Event Summary -->
+		<%= SMEXT_get_html("event_summary.html") %> 
+	</td>
+	</tr>
+	<tr>
+		<td><br>
+<!-- Event Description -------->
+		<%= SMEXT_get_html("event_desc.html") %>
+		</td>
+	</tr>
+<!-- RFC Justification and Additional Requirements -------->
+		<%= SMEXT_get_html("rfc_justification.html") %> 
+
+	<tr>
+		<td valign="top"><br>
+
+<!-- USER 1 Chars -------->
+		<%= SMEXT_get_html("user_char_1.html") %> 
+	
+		</td>
+	</tr>
+	<tr>
+		<td valign="top"><br>
+
+<!-- USER 2 Chars -------->
+		<%= SMEXT_get_html("user_char_2.html") %> 
+	
+		</td>
+	</tr>
+	<tr>
+
+<!-- Actions List (only need a leading <tr> tag, no trailing <tr> or <td> tags-------->
+		<%= SMEXT_get_html("actions_list.html") %> 
+
+	<tr>
+	<td>
+
+<!-- Linked Events ------->	
+		<%= SMEXT_get_html("linked_events.html") %>
+	</td>
+    </tr>
+	<tr>	
+		<td class="maintext">
+		<p><br>Many thanks,
+			<br><%= strServiceDeskName %><br>
+		</td>
+	</tr>
+</table>
+</body>
+</html>

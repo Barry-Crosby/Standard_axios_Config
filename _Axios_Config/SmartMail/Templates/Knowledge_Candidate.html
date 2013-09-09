@@ -1,0 +1,50 @@
+<html>
+<head>
+<title>assyst Smart Mail template</title>
+<!-- Copyright(c) Axios Systems -->
+<!-- All Rights Reserved -->
+<!-- For V9 templates user TICKET_TYPE_FOR_EMAIL for event type name and EVENT_TYPE_EXT for event types -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- Stylesheet definition -->
+	<%= SMEXT_get_html("stylesheet.html") %>
+	
+</head>
+
+<body>
+<table border="0" align="center" cellpadding="0" cellspacing="0">
+	<tr>
+		<td>
+		<p align="left"><b><font size="2"><BR>The following information has been flagged as a Knowledge Candidate for $TICKET_TYPE_FOR_EMAIL #$EVENT_TYPE_U$EVENT_REF.</font>
+			<br>To view the full event click <A HREF="<%=strassystWebURL%>/event/DisplayEvent.do?dispatch=getEvent&eventId=$EVENT_ID&resultset=EventSearchEventList&ncAction=RESETHISTORY&ncForwardName=EventSearch&history=HISTORYCLEAR">assyst Web</A>.<br>
+			</p>		
+	</tr>
+	<tr>
+		<td><br>
+		<table width="100%" class="tableframe">
+			<tr>
+				<td class="deschighlight">
+				<p>Knowledge Candidate</td>
+			</tr>
+			<tr>
+				<td class="desctext"><%= html_break(ACT_DESC) %></td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+	<tr>
+		<td><br>
+<!-- Event Description -------->
+		<%= SMEXT_get_html("event_desc.html") %>
+		
+		</td>
+	</tr>
+	<tr>
+		<td valign="top"><br>
+<!-- Event Summary -->
+		<%= SMEXT_get_html("event_summary.html") %>
+		
+		</td>
+	</tr>
+</table>
+</body>
+</html>

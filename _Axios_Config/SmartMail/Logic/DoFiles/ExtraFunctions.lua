@@ -1,0 +1,12 @@
+--------------------------------------------------------------------------------------
+-- ExtraFunctions.lua
+-- This is a common header file for customer specific extra functions
+--------------------------------------------------------------------------------------
+--
+-- This script is not supported by Axios Systems. The script is provided as is and Axios Systems
+-- accepts no responsibility or liability for the consequences of using this script.
+--
+--------------------------------------------------------------------------------------
+-- Change log
+-- MMM DD 2010	Comments here
+--------------------------------------------------------------------------------------	

@@ -1,0 +1,237 @@
+
+/* -----------------------------------------------
+ *             SECTION: Controlling layout
+ * ----------------------------------------------- */
+ 
+#content {
+	background:#fff;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	margin-right: auto; /*auto doesn't work very well in IE */
+	margin-left: auto;
+	padding-left: 40px;
+	padding-right: 40px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	width: 800px;
+	border: 1px solid #000;
+}
+
+#header {
+	/*width: 700px;*/
+	margin-top: 20px;
+	margin-bottom: 40px;
+	text-align: center;	
+}
+
+#copyright {
+	/*background: #F5EBF9; */
+	line-height: 18px;
+	text-align: left;
+	width: 600px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	margin-right: auto;
+	margin-left:auto;
+	border-top: 2px solid #003399;
+	border-bottom: 2px solid #003399;
+}
+
+#main {
+	/*width: 700px;*/
+	margin-top: 20px;
+}
+
+
+br{
+	clear: left;
+}
+
+.b{
+	margin-top: 20px;
+	background: #F1F8F9;
+	padding: 20px;
+}
+
+.g{
+	margin-top: 20px;
+	background: #F8F4F3;
+	padding: 20px;
+}
+
+@media all
+{
+  .page-break  { display:none; }
+}
+
+@media print
+{
+  .page-break  { display:block; page-break-before:always; }
+}
+
+
+/* -----------------------------------------------
+ *       SECTION: Text element display styles
+ * ----------------------------------------------- */
+
+h1 {
+	margin-top: 20px;
+	margin-bottom: 10px;
+	font-family: georgia, times, serif;
+	font-size: 24px;
+	line-height; 1.5em;
+	color: #000;
+	text-align: center;
+}
+
+h2 {
+	margin-top: 40px;
+	font-family: verdana, arial, helvetica, sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+	line-height: 1.5em;
+	color: #884411;
+	border-bottom:1px solid #CCCCCC;
+}
+
+h3 {
+	margin-top: 25px;
+	font-family: verdana, arial, helvetica, sans-serif;
+	font-size: 15px;
+	font-weight: bold;
+	line-height: 1.5em;
+	color: #884411;	
+}
+
+h4 {
+	margin-top: 20px;
+	font-family: verdana, arial, helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	line-height: 10px;
+	color: #000;	
+}
+
+body {
+	margin: 0px;
+	padding: 0px;
+	font-family: verdana, arial, helvetica, sans-serif;
+	font-size: 12px;
+	line-height: 20px;
+	text-align: justify;
+	color: #000;
+	background-color: #ccc;
+}
+
+.term {
+	font-family: "Courier New", arial, sans-serif;
+	font-weight: bold;
+	font-size: 13px;
+	line-height: 20px;
+}
+
+.emphasis {
+	font-weight: bold;
+	font-style: italic;
+	font-size: 12px;
+	line-height: 20px;
+}
+
+.important {
+	background: #FFBFB6;
+}
+
+.caution{
+	background: #F8FF99;
+}
+
+.invisible{
+	display: none;
+}
+
+li {
+	margin-top: 5px;
+	margin-left: -15px;
+}
+
+.noindent{
+	margin-top: 0px;
+	margin-left: 0px;
+	padding-left: 12px;
+	list-style-type: none;
+}
+
+.code{
+	font-family: monospace;
+	font-size: 9pt;
+}
+
+pre{
+	margin-top: 10px;
+	background: #FFFFCC;
+	border: 1px solid #FFEE88;
+	padding: 5px;
+}
+
+p.explanation{
+	margin-top: -5px;
+	margin-left: 15px;;
+}
+
+p.caption{
+	font-family: verdana, arial, helvetica, sans-serif;
+	font-size: 12px;	
+	font-weight: bold;
+}
+
+img{
+	margin-top: 20px;
+}
+
+/* --------------------------------------------------------
+ *		SECTION: Table styles
+ * -------------------------------------------------------- */
+
+table{
+	font: 12px verdana, arial, helvetica, sans-serif;
+	width: 650px;
+	padding: 0;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10px;
+	margin-bottom: 20px;
+	border-left: 1px solid #000;
+	border-top: 1px solid #000;
+	border-collapse: collapse;
+}
+
+.message{
+	width: auto;
+}
+
+th{
+	border-bottom: 1px solid #000;
+	border-right: 1px solid #000;
+	padding: 6px 6px 6px 6px;
+	text-align:left;
+}
+
+td{
+	margin: 0px;
+	text-align: left;
+	border-top: 0;
+	border-right: 1px solid #000;
+	border-bottom: 1px solid #000;
+	padding: 6px 6px 6px 6px;
+}
+
+td.first{
+	width:275px;
+}
+
+caption{
+	text-align: left;
+	font-weight: bold;
+}

@@ -1,0 +1,65 @@
+<html>
+<head>
+<title>assyst Smart Mail template</title>
+<!-- Copyright(c) Axios Systems -->
+<!-- All Rights Reserved -->
+<!-- For V9 templates user TICKET_TYPE_FOR_EMAIL for event type name and EVENT_TYPE_EXT for event types -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- Stylesheet definition -->
+	<%= SMEXT_get_html("stylesheet.html") %>
+	
+</head>
+
+<body>
+<table border="0" align="center" cellpadding="0" cellspacing="0">
+	<tr>
+		<td valign="bottom">
+			<% if #COMP_LOGO > 1 then %>  
+			<img src="<%= COMP_LOGO%>" align="center">
+			<% end %>
+			<b><font size="2">
+		<BR>Event #$EVENT_TYPE_U$EVENT_REF has been closed</b></td>
+	</tr>
+	<tr>
+		<td valign="top" class="maintext"><br>
+			<p>
+					<BR>
+					Dear $AFF_USR_N ,<BR>
+					<BR>$TICKET_TYPE_FOR_EMAIL #$EVENT_REF regarding item "$ITEM_N" 
+					<% if REP_USR_N ~= nil then %>reported by $REP_USR_N, <% end %>
+					logged on $LOGGED_DATE has been closed. <br><br>
+					If you have questions or comments about $TICKET_TYPE_FOR_EMAIL #$EVENT_TYPE_U$EVENT_REF, please contact the Service Desk.  
+					<BR><BR>The event is summarized as: 
+		</td>
+	</tr>
+	<tr>
+		<td valign="top"><br>
+<!-- Event Summary -->
+		<%= SMEXT_get_html("event_summary.html") %>
+
+		</td>
+	</tr>
+	<tr>
+		<td>
+<!-- Event Description -------->
+		<%= SMEXT_get_html("event_desc.html") %>
+
+		</td>
+	</tr>
+	<tr>
+		<td>
+<!-- Survey -------->
+		<% if ((EMAIL_SURVEY_URL_EN or "") ~=  "") then %> 
+		<%= SMEXT_get_html("event_survey.html") %> 
+		<% end %>
+		</td>
+	</tr>
+	<tr>
+		<td class="maintext">
+		<p><br>Many thanks,
+			<br><%= strServiceDeskName %><br>
+		</td>
+	</tr>
+</table>
+</body>
+</html>

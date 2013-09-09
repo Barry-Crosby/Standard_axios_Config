@@ -1,0 +1,77 @@
+	<!-- Data from User1 Char form -->
+	<% if RFC_USER1_DATE1 or RFC_USER1_DATE2 or RFC_USER1_DATE3 or
+			(RFC_USER1_DEC1 and RFC_USER1_DEC1 ~= 0) or
+			(RFC_USER1_DEC2 and RFC_USER1_DEC2 ~= 0) or
+			(RFC_USER1_DEC3 and RFC_USER1_DEC3 ~= 0) then %>
+		<tr>
+			<td valign="top"><br>
+			<table width="100%" class="tableframe">
+				<tr><td valign="top"><table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<% if RFC_USER1_DATE1 or RFC_USER1_DEC1 ~= 0 then %>
+					<tr>
+						<td width="20%" class="wtcolumn">
+						<p>User 1 Dec-1 / Date-1</td>
+						<td width="40%" class="purplecolumn"><%= RFC_USER1_DEC1 %></td>
+						<td width="40%" class="wtcolumnblk">
+						<p><%= RFC_USER1_DATE1 %>&nbsp;<%= RFC_USER1_TIME1 %></td>
+					</tr>
+				<% end %>
+				<% if RFC_USER1_DATE2 or RFC_USER1_DEC2 ~= 0 then %>
+					<tr>
+						<td width="20%" class="wtcolumn">
+						<p>User 1 Dec-2 / Date-1</td>
+						<td width="40%" class="purplecolumn"><%= RFC_USER1_DEC2 %></td>
+						<td width="40%" class="wtcolumnblk">
+						<p><%= RFC_USER1_DATE2 %>&nbsp;<%= RFC_USER1_TIME2 %></td>
+					</tr>
+				<% end %>
+				<% if RFC_USER1_DATE3 or RFC_USER1_DEC3 ~= 0 then %>
+					<tr>
+						<td width="20%" class="wtcolumn">
+						<p>User 1 Dec-3 / Date-3</td>
+						<td width="40%" class="purplecolumn"><%= RFC_USER1_DEC3 %></td>
+						<td width="40%" class="wtcolumnblk">
+						<p><%= RFC_USER1_DATE3 %>&nbsp;<%= RFC_USER1_TIME3 %></td>
+					</tr>
+				<% end %>
+				</table></td></tr>
+			</table>
+			</td>
+		</tr>
+	<% end %>
+	<% if (RFC_USER1_CHAR1 and RFC_USER1_CHAR1 ~= "") or (RFC_USER1_CHAR2 and RFC_USER1_CHAR2 ~= "") or (RFC_USER1_CHAR3 and RFC_USER1_CHAR3 ~= "") then %>
+		<tr>
+			<td><br>
+			<table width="100%" class="tableframe">
+				<% if RFC_USER1_CHAR1 and RFC_USER1_CHAR1 ~= "" then %>
+					<tr>
+						<td class="deschighlight">
+						<p>User 1 Char 1</td>
+					</tr>
+					<tr>
+						<td class="desctext"><%= html_break(RFC_USER1_CHAR1) %></td>
+					</tr>
+				<% end %>
+				<% if RFC_USER1_CHAR2 and RFC_USER1_CHAR2 ~= "" then %>
+					<tr>
+						<td class="deschighlight">
+						<p>User 1 Char 2</td>
+					</tr>
+					<tr>
+						<td class="desctext"><%= html_break(RFC_USER1_CHAR2) %></td>
+					</tr>
+				<% end %>
+				<% if RFC_USER1_CHAR3 and RFC_USER1_CHAR3 ~= "" then %>
+					<tr>
+						<td class="deschighlight">
+						<p>User 1 Char 3</td>
+					</tr>
+					<tr>
+						<td class="desctext"><%= html_break(RFC_USER1_CHAR3) %></td>
+					</tr>
+				<% end %>
+			</table>
+			</td>
+		</tr>
+	<% end %>
+	

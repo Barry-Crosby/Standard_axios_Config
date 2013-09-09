@@ -1,0 +1,136 @@
+<html>
+<head>
+<title>assyst Smart Mail template</title>
+<!-- Copyright(c) Axios Systems -->
+<!-- All Rights Reserved -->
+<!-- For V9 templates user TICKET_TYPE_FOR_EMAIL for event type name and EVENT_TYPE_EXT for event types -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- Stylesheet definition -->
+<!-- Stylesheet definition -->
+	<%= SMEXT_get_html("stylesheet.html") %>
+</head>
+
+<body>
+<table border="0" align="center" cellpadding="0" cellspacing="0">
+	<tr>
+		<td valign="bottom">
+			<% if #COMP_LOGO > 1 then %>  
+			<img src="<%= COMP_LOGO%>" align="center">
+			<% end %>
+			<b><font size="2"><BR>$TICKET_TYPE_FOR_EMAIL #$EVENT_TYPE_U$EVENT_REF </font>
+		has been assigned to you for approval or to make a decision.</font></b></td>
+	</tr>
+<p>
+	<tr>
+		<td>
+<!-- Approval Instructions -------->
+		<%= SMEXT_get_html("approval_desc.html") %>
+		
+		</td>
+	</tr>
+
+	<% if AUTH_LINK_WEB or AUTH_LINK_WEB_DETAILS then %>
+	<tr>
+		<td>
+			</p>
+			<%= SMEXT_get_html("action_link.html") %> 
+		</td>
+	</tr>
+	<% end %>	
+	
+	<tr>
+		<td valign="top"><br>	
+<!-- Event Summary -->
+		<%= SMEXT_get_html("event_summary.html") %>
+		
+		</td>
+	</tr>
+	
+	<tr>
+		<td>
+<!-- Approval Instructions -------->
+		<%= SMEXT_get_html("request_desc.html") %>	
+		</td>
+	</tr>
+
+	<tr>
+		<td>
+<!-- RFC Justification and Additional Requirements -------->
+		<%= SMEXT_get_html("rfc_justification.html") %> 
+		
+		</td>
+	</tr>
+
+<!-- Data from custom fields -->
+	<% if (NUMBER_OF_FIELDS or "") ~= "" then %>  
+	<tr>
+		<td valign="top"><br>
+
+		<% if tonumber(NUMBER_OF_FIELDS or "") > 0 then %>         
+			<table width="100%" class="tableframe">		
+				<tr>
+					<td width="20%" class="deschighlight">Additional Information</td>
+					<td width="80%"></td>
+				</tr>
+				<% for i= 1, NUMBER_OF_FIELDS do %>
+					<!-- Only include fields with values -->				
+					<% if CUST_FIELD_NAME[i] and _G[CUST_FIELD_LIST[CUST_FIELD_SC[i]]] ~="" then %>
+						<tr>
+							<td class="wtcolumn"><%=CUST_FIELD_NAME[i]%></td>
+							<td class="purplecolumn"><%= html_break(_G[CUST_FIELD_LIST[CUST_FIELD_SC[i]]] or "") %></td>
+						</tr>
+					<% end %>
+				<% end %>
+			</table>
+		<% end %>
+			
+		</td>
+	</tr>
+	<% end %>	
+
+	
+	<% if AUTH_LINK_WEB or AUTH_LINK_WEB_DETAILS then %>
+	<tr>
+		<td>
+<!-- Linked Events ------->	
+		<%= SMEXT_get_html("linked_events.html") %> 
+		</td>
+    </tr>	
+	<% end %>
+	
+	<% if AUTH_LINK_NET then %>
+	<tr>
+		<td>
+		<br><%= getEventLink("Please process this request ", EVENT_ID, "assystNET", false, false, true)%>
+		</td>
+    </tr>	
+	<% end %>
+	
+	<% if AUTH_LINK_WEB then %>
+	<tr>
+		<td>
+		<p>
+		<%= getEventLink("Please process this request ", EVENT_ID, "assyst Web", true, false, false)%>
+		<%= getEventLink("For mobile access please click ", EVENT_ID, "assyst Mobile", false, true, false)%>
+		</td>
+    </tr>	
+	<% end %>
+	
+	<% if AUTH_LINK_WEB_DETAILS then %>
+	<tr>
+		<td>
+		<p>
+		<%= getEventLink("For full details on the request click ", EVENT_ID, "assyst Web", true, false, false)%>
+		</td>
+    </tr>	
+	<% end %>
+
+	<tr>	
+		<td class="maintext">
+		<p><br>Many thanks,
+			<br><%= strServiceDeskName %><br>
+		</td>
+	</tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,14 @@
+max_errors 1000
+separator ','
+delimiter '"'
+batch 100
+update usr_role_sc
+table usr_role
+columns usr_role_id keyval
+usr_role_sc varchar
+usr_role_n varchar
+stat_flag char
+modify_id varchar 'CORP DIR'
+modify_date date currentdate
+version int '1'
+data

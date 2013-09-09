@@ -1,0 +1,22 @@
+max_errors 1000
+separator ','
+delimiter '"'
+batch 100
+update bldng_sc
+table bldng
+columns bldng_id keyval
+site_id lookup site_id from site where site_sc
+bldng_sc varchar
+bldng_n varchar
+address1 varchar
+address2 varchar
+post_town varchar
+address3 varchar
+country varchar
+post_code varchar
+csg_id int '0'
+stat_flag char
+modify_id varchar 'CORP DIR'
+modify_date date currentdate
+version int '1'
+data

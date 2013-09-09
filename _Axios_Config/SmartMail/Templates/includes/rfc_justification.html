@@ -1,0 +1,31 @@
+<!-- HTML for RFC Justification and Additional Requirements -->
+	<% if RFC_JUSTIFICATION_DESC then %>
+		<tr>
+			<td><br>
+			<table width="100%" class="tableframe">
+				<tr>
+					<td class="deschighlight">
+					<p>Justification</td>
+				</tr>
+				<tr>
+					<td class="desctext"><%= html_break(RFC_JUSTIFICATION_DESC) %></td>
+				</tr>
+			</table>
+			</td>
+		</tr>
+	<% end %>
+	<% if RFC_ADD_REQS_DESC then %>
+		<tr>
+			<td><br>
+			<table width="100%" class="tableframe">
+				<tr>
+					<td class="deschighlight">
+					<p>Additional Requirements</td>
+				</tr>
+				<tr>
+					<td class="desctext"><%= html_break(RFC_ADD_REQS_DESC) %></td>
+				</tr>
+			</table>
+			</td>
+		</tr>
+	<% end %>

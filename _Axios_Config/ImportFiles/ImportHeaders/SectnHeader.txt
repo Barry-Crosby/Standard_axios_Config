@@ -1,0 +1,22 @@
+max_errors 10
+separator ','
+delimiter '"'
+batch 100
+update sectn_sc
+table sectn
+columns sectn_id keyval
+branch_id lookup branch_id from branch where branch_sc
+sectn_sc varchar
+sectn_n varchar
+dflt_sla_id int '0'
+sectn_cls_id  int '0'
+dflt_insurer int '0'
+hplan_head_id int '0'
+manager_id int '0'
+csg_id int '0'
+stat_flag char
+modify_id varchar 'CORP DIR'
+modify_date date currentdate
+licence_count int '0'
+version int '1'
+data

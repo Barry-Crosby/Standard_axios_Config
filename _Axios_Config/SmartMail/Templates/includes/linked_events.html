@@ -1,0 +1,38 @@
+	<!-- Linked tickets START ----------------------------------------------------------------------------------------->	
+		<% if LINK_COUNT and LINK_COUNT > 0 then %>
+			  <table class="tableframe" width="100%">
+				<tr>
+				   <th colspan=8 class="purplecolumn">$TICKET_TYPE_FOR_EMAIL #$EVENT_TYPE_U$EVENT_REF has&nbsp;<%= LINK_COUNT or "0" %> linked event(s)</th>
+				</tr>
+				<tr>
+				   <td class="wtcolumnblk"></td>
+				   <td class="purplecolumn"><b>Type</b></td>
+				   <td class="wtcolumnblk"><b>Ref#</b></td>
+				   <td class="purplecolumn"><b>Logging Date</b></td>
+				   <td class="wtcolumnblk"><b>Status</b></td>
+				   <td class="purplecolumn"><b>Logging User</b></td>
+				   <td class="wtcolumnblk"><b>Reason</b></td>
+				   <td class="purplecolumn"><b>Linked by</b></td>
+				</tr>
+    		<%  for i = 1, LINK_COUNT do %>
+				<tr>
+                    <td class="wtcolumnblk"><b><%= i%></b></td>
+					<td class="purplecolumn"><%=LINK_TICKET_TYPE[i]%></td>
+					<td class="wtcolumnblk"><%=LINK_INC_REF[i]%></td>
+					<td class="purplecolumn"><%=LINK_INC_DATE[i]%></td>
+					<td class="wtcolumnblk"><%=LINK_STATUS[i]%></td>
+					<td class="purplecolumn"><%=LINK_ASSYST_USR_N[i]%></td>
+					<td class="wtcolumnblk"><%=LINK_REASON_SC[i]%></td>
+					<td class="purplecolumn"><%=LINK_BY_N[i]%></td>
+				</tr>
+			<% end %>
+              </table>
+		<% else %>
+		<table class="tableframe" width="100%">
+			<tr>
+				<td align="center"><font size="2">$TICKET_TYPE_FOR_EMAIL #$EVENT_TYPE_U$EVENT_REF does not have any linked events</font></td>
+			</tr>
+		</table>
+
+		<% end %>
+	<!-- Linked tickets END ------------------------------------------------------------------------------------------->

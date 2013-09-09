@@ -1,0 +1,73 @@
+<!-- Loop through all actions on event -->
+		<% for i = 1, EVENT_ACTION_COUNT do %>
+			<td><table width="100%" class="tableframe">
+				<tr><td valign="top"><table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td width="20%" class="wtcolumn">
+						<p>
+							<a name="lastAction">
+						Action Type
+					</td>
+					<td width="40%" class="purplecolumn"><%= ALL_ACT_TYPE_N[i] %></td>
+					<td width="40%" class="wtcolumnblk"><%= ALL_ACT_TYPE_SC[i] %></td>
+				</tr>
+				<tr>
+					<td class="wtcolumn">
+					<p>Date Actioned</td>
+					<td class="purplecolumn"><%= SMEXT_FormatNameFromDate(ALL_ACT_DATE[i]) %> <%= ALL_ACT_TIME[i] %></td>
+					<td class="wtcolumnblk">&nbsp;</td>
+				</tr>
+				<tr>
+					<td class="wtcolumn">
+					<p>Actioned by</td>
+					<td class="purplecolumn"><%= ALL_ACTIONING_USR_N[i] or "&nbsp;" %></td>
+					<td class="wtcolumnblk"><%= ALL_ACTIONING_USR_SC[i] or "&nbsp;" %></td>
+				</tr>
+				<tr>
+					<td class="wtcolumn">
+					<p>Service Dept</td>
+					<td class="purplecolumn"><%= ALL_ACTIONING_SVD_N[i] or "&nbsp;" %></td>
+					<td class="wtcolumnblk"><%= ALL_ACTIONING_SVD_SC[i] or "&nbsp;" %></td>
+				</tr>
+				<% if ALL_ACT_ASS_SVD_SC[i] or ALL_ACT_ASS_USR_SC[i] then %>
+					<tr>
+						<td class="wtcolumn">
+						<p>Assigned SVD</td>
+						<td class="purplecolumn"><%= ALL_ACT_ASS_SVD_N[i] or "&nbsp;" %></td>
+						<td class="wtcolumnblk"><%= ALL_ACT_ASS_SVD_SC[i] or "&nbsp;" %></td>
+					</tr>
+					<tr>
+						<td class="wtcolumn">
+						<p>Assigned User</td>
+						<td class="purplecolumn"><%= ALL_ACT_ASS_USR_N[i] or "&nbsp;" %></td>
+						<td class="wtcolumnblk"><%= ALL_ACT_ASS_USR_SC[i] or "&nbsp;" %></td>
+					</tr>
+				<% end %>
+				<% if ALL_ACT_SUPP_CTC[i] or ALL_ACT_SUPP_REF[i] then %>
+					<tr>
+						<td class="wtcolumn">
+						<p>Supplier CTC</td>
+						<td class="purplecolumn"><%= ALL_ACT_SUPP_CTC[i] or "&nbsp;" %></td>
+						<td class="wtcolumnblk">&nbsp;</td>
+					</tr>
+					<tr>
+						<td class="wtcolumn">
+						<p>Supplier Ref</td>
+						<td class="purplecolumn"><%= ALL_ACT_SUPP_REF[i] or "&nbsp;" %></td>
+						<td class="wtcolumnblk">&nbsp;</td>
+					</tr>
+				<% end %>
+				<% if ALL_ACT_DESC[i] then %>
+					<tr>
+						<td colspan=3 class="deschighlight">
+						<p>Description</td>
+					</tr>
+					<tr>
+						<td colspan=3 class="desctext"><%= html_break(ALL_ACT_DESC[i]) %></td>
+					</tr>
+				<% end %>
+				</table></td></tr>
+			</table>
+			</td>
+		</tr>
+	<% end %>

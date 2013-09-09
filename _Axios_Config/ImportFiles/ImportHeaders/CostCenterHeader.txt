@@ -1,0 +1,15 @@
+max_errors 1000
+separator ','
+delimiter '"'
+batch 100
+update cost_centre_sc
+table cost_centre
+columns cost_centre_id keyval
+cost_centre_sc varchar
+cost_centre_n varchar
+csg_id int '0'
+stat_flag char
+modify_id varchar 'CORP DIR'
+modify_date date currentdate
+version int '1'
+data

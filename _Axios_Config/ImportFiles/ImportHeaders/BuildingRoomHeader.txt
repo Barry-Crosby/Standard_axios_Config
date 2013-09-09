@@ -1,0 +1,23 @@
+max_errors 1000
+separator ','
+delimiter '"'
+batch 100
+update bldng_room_sc
+table bldng_room
+columns bldng_room_id keyval
+bldng_room_sc varchar
+bldng_sc varchar
+bldng_id lookup bldng_id from bldng where bldng_sc
+bldng_n lookup_varchar bldng_n from bldng where bldng_sc
+stat_flag char
+room_id int '0'
+csg_id  int '0'
+modify_id varchar 'CORP DIR'
+modify_date date currentdate
+store_flag char 'n'
+store_loc_id int '0'
+currency_id int '0'
+order_typ_id int '0'
+issue_typ_id int '0'
+version int '1'
+data

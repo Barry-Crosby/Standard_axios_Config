@@ -1,0 +1,35 @@
+<html>
+<head>
+<title>assyst Smart Mail template</title>
+<!-- Copyright(c) Axios Systems -->
+<!-- All Rights Reserved -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- Stylesheet definition -->
+	<%= SMEXT_get_html("stylesheet.html") %>
+</head>
+
+<body>
+<table border="0" align="center" cellpadding="0" cellspacing="0">
+	<tr>
+		<td valign="bottom">
+		<p align="center"><img src="<%=COMP_LOGO%>" align="center"><b><font size="2"><BR>$PAR_TICKET_TYPE_FOR_EMAIL #$PAR_EVENT_TYPE_U$PAR_EVENT_REF </font>
+		was rejected.</font></b></td>
+	</tr>
+<br>
+	<tr>
+		<td class="deschighlight">
+		<p>Response:</td>
+	</tr>
+	<tr>
+		<td class="desctext"><%= html_break(ACT_DESC or "&nbsp;") %></td>
+	</tr>
+
+	<tr>	
+		<td class="maintext">
+		<p><br>Many thanks,
+			<br><%= strServiceDeskName %><br>
+		</td>
+	</tr>
+</table>
+</body>
+</html>
